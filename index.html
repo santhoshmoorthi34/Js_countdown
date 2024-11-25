@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+        <h2>NASA</h2>
+       
+        <div class="main">
+            <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat repellendus qui, facere sint nobis aut.</h5>
+            <h1>The Rocket <span>Launched  soon...</span> </h1>
+            
+            <div class="col">
+                <div class="col-1">
+                    <p id="day">00</p>
+                    <h4>day</h4>
+                </div>
+                <div class="col-2">
+                    <p id="hours">:00</p>
+                    <h4>hours</h4>
+                </div>
+                <div class="col-3">
+                    <p id="min">:00</p>
+                    <h4>min</h4>
+                </div>
+                <div class="col-4">
+                    <p id="sec">:00</p>
+                    <h4>sec</h4>
+                </div>
+            </div>
+            <img src="https://static.vecteezy.com/system/resources/previews/013/743/608/original/cartoon-rocket-launch-png.png" class="rocket">
+        </div>
+    </div>
+
+
+
+    <!-- script -->
+
+
+    <script>
+        var old=new Date("Oct 16, 2024 00:00:00:00").getTime();
+        var x= setInterval(function(){
+            var now=new Date().getTime();
+            var dis=now-old;
+
+            var day=Math.floor(dis/(1000*60*60*24));
+            var hours=Math.floor((dis%(1000*60*60*24))/(1000*60*60));
+            var min=Math.floor((dis%(1000*60*60))/(1000*60));
+            var sec=Math.floor((dis%(1000*60))/1000);
+            console.log(day,hours,min,sec)
+
+             document.getElementById("day").innerHTML= day;
+             document.getElementById("hours").innerHTML= hours;
+             document.getElementById("min").innerHTML= min;
+             document.getElementById("sec").innerHTML= sec;
+
+
+        },1000
+     
+    );
+    </script>
+</body>
+</html>
